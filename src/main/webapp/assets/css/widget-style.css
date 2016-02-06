@@ -1,0 +1,29 @@
+/*module wise styling*/
+.aws-curr-cost{
+	color: #E6E6E6;
+    font-size: 2em;
+    font-weight: 500;
+    padding: 2px;
+}
+
+.aws-diff-cost{
+	color: wheat;
+	font-size: large;
+	font-weight: 200;
+}
+
+.aws-facet-name{
+	color: #E6E6E6;
+	font-weight: 100;
+	font-size: 15px;
+}
+
+.aws-sys-selector{
+	font-weight: 100;
+	cursor: pointer;
+	background-color: #0D283E;
+}
+
+.aws-sys-selector:hover{
+	background-color: #133856;
+}
