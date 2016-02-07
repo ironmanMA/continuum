@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.boomerang.auth.google</groupId>
-	<artifactId>BoomBoard</artifactId>
+	<artifactId>Continuum</artifactId>
 	<packaging>war</packaging>
 	<version>0.1.2-SNAPSHOT</version>
-	<name>Boomerang Commerce internal dashboard</name>
+	<name>Continüüm dashboard</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<slf4j.version>1.7.10</slf4j.version>
@@ -74,7 +74,7 @@
 		</repository>
 	</repositories>
 	<build>
-		<finalName>dashboard</finalName>
+		<finalName>continuum</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
