@@ -10,6 +10,7 @@ import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -24,7 +25,13 @@ public class TextHelper {
 
     public static LinkedList<String> Tokenizer(String garbage) {
 
-        garbage = garbage.replaceAll("[^a-zA-Z0-9\\s]+|[^a-zA-Z0-9\\s]+", "").toLowerCase();
+
+        try {
+            garbage = java.net.URLDecoder.decode(garbage, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        garbage = garbage.replaceAll("[^a-zA-Z\\s]+|[^a-zA-Z\\s]+", "").toLowerCase();
 
         System.out.println(garbage);
 
