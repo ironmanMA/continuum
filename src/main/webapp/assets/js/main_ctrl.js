@@ -24,7 +24,7 @@ angular.module('continuum',
 				{
 					"site": "youtube",
 					"title": title.toUpperCase()+" Video",
-					"info": " millions of views on this viral video",
+					"info": " >10 millions of views on this",
 					"link": "https://www.youtube.com/results?search_query="+title.toLowerCase()
 				},
 				{
@@ -37,24 +37,33 @@ angular.module('continuum',
 		}else if(json["places"].length >0){
 			// places template
 			title = json["places"][0]
+			// $http({
+			// 	method: 'GET',
+			// 	url: 'https://api.forecast.io/forecast/572137b8258bed98f73cbbb7760e9117/12.933548,77.621243',
+			// }).success(function(data){
+			// 	console.log(data);
+			// }).error(function(data){
+			// 	alert(data);
+			// });
+
 			uiJSON = [
 				{
 					"site": "weather",
-					"title": "Awesome "+title.toUpperCase(),
-					"info": " 22 degree celcius",
+					"title": "22°C "+title.toUpperCase(),
+					"info": " Right time to Headout ",
 					"link": "https://weather.com/weather/today"
 				},
 				{
-					"site": "facebook",
-					"title": "Happenings "+title.toUpperCase(),
-					"info": "84 live events in this place",
-					"link": "https://www.facebook.com/search/events/?q="+title.toLowerCase()
+					"site": "headout",
+					"title": "Attractions in "+title.toUpperCase(),
+					"info": "49 amazing things to do",
+					"link": "https://www.headout.com/tours/dubai"+title.toLowerCase()+"?tags=attraction&categoryId=107"
 				},
 				{
-					"site": "airbnb",
-					"title": "Hotels in "+title.toUpperCase(),
-					"info": "49 comfy places available",
-					"link": "https://www.airbnb.co.in/s/"+title.toLowerCase()
+					"site": "facebook",
+					"title": "Your friends are ... ",
+					"info": "84 live events in this place",
+					"link": "https://www.facebook.com/search/events/?q="+title.toLowerCase()
 				}
 				]
 		}else if(json["food"].length >0){
@@ -70,8 +79,14 @@ angular.module('continuum',
 				{
 					"site": "spoonacular",
 					"title": "Cook "+title.toUpperCase(),
-					"info": "amazing recipes, ready in 20 minutes!!!",
+					"info": "amazing recipes, ready in 35 minutes!!!",
 					"link": "https://spoonacular.com/"+title.toLowerCase()
+				},
+				{
+					"site": "swiggy",
+					"title": "Deliver "+title.toUpperCase(),
+					"info": "get it delivered within 20 minutes!!!",
+					"link": "https://www.swiggy.com"
 				}
 				]
 		}else{
@@ -106,14 +121,15 @@ angular.module('continuum',
 		// body...
 		$scope.Test = window.location.href;
 		// http://continuum.rboomerang.com:8080/continuum?user=gaurav&geoLat=12.9&geoLon=77.6&text=uhello%20%23%24%25%24%20guaejfi%20sfudhsuail%20cindrella%20revenant%20%20jksgfuh832hfr8u%20f8yf8vrjh%20pizza%20koramangala%20biryani
+
 		// http://continuum.rboomerang.com:8080/continuum?_user_=gaurav&_geoLat_=12.9&_geoLon_=77.6&_text_=uhello #$%$ guaejfi sfudhsuail cindrella revenant  jksgfuh832hfr8u f8yf8vrjh pizza koramangala biryani
 
 		// $scope.json = {
 		// 				"userName":"gaurav",
 		// 				"geoLocation":"12.933548, 77.621243",
-		// 				"movies":["revenant","Hotel Transylvania"],
-		// 				"places":["koramangala","trolltunga"],
-		// 				"food":["crepes","dinner"]
+		// 				"movies":["revenant","Hotel Transylvania"],//"revenant","Hotel Transylvania"
+		// 				"places":[],//"koramangala","trolltunga"
+		// 				"food":[]//"crepes","dinner"
 		// 				}
 		tokens = tokenParse(window.location.href.split('continuum/')[1])
 // 		{"userName":"Gaurav",
@@ -123,6 +139,7 @@ angular.module('continuum',
 				geoLocation : tokens["geoLocation"],
 				text : tokens["text"]
 		};
+		console.log($scope.Test)
 		console.log(dataObj)
 		var res = $http.post('//continuum.rboomerang.com:8080/continuumcore/highterms', dataObj);
 		res.success(function(data, status, headers, config) {
@@ -132,6 +149,7 @@ angular.module('continuum',
 		res.error(function(data, status, headers, config) {
 			console.log( "failure message: " + JSON.stringify({data: data}));
 		});
+		// $scope.uiJSON = jsonForUI($scope.json)
 		// $scope.apply()
 	}
 

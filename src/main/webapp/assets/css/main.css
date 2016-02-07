@@ -24,8 +24,8 @@ ul.gNow li {
 }
 div.card {
 	background: #fff;
-	width: 70%;
-	margin: 0 15%;
+	width: 90%;
+	margin: 0 5%;
 	position: relative;
 	padding: 15px;
 	box-shadow: 0px 3px rgba( 0, 0, 0, 0.1 );
@@ -37,10 +37,13 @@ div.card {
 	border-radius: 2px;
 	}
 	div.card p {
-		margin: 0 0 15px 0;
+		margin: 0 0 10px 0;
 	}
 	div.card p.card-title {
-		font-size: 28px;
+		font-size: 20px;
+	}
+	div.card p.card-info {
+		font-weight: 300;
 	}
 	div.card p.url {
 		border-top: 1px solid #e5e5e5;
