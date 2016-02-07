@@ -19,19 +19,22 @@ angular.module('continuum',
 					"site": "imdb",
 					"title": title.toUpperCase()+" Movie",
 					"info": " 8.5/10 rating",
-					"link": "http://www.imdb.com/find?q="+title.toLowerCase()
+					"link": "http://www.imdb.com/find?q="+title.toLowerCase(),
+					"action_text": "read more"
 				},
 				{
 					"site": "youtube",
 					"title": title.toUpperCase()+" Video",
 					"info": " >10 millions of views on this",
-					"link": "https://www.youtube.com/results?search_query="+title.toLowerCase()
+					"link": "https://www.youtube.com/results?search_query="+title.toLowerCase(),
+					"action_text": "see now"
 				},
 				{
 					"site": "bookmyshow",
 					"title": "Tickets for "+title.toUpperCase(),
 					"info": "tickets running out, book fast",
-					"link": "https://in.bookmyshow.com/bengaluru/movies/"+title.toLowerCase()
+					"link": "https://in.bookmyshow.com/bengaluru/movies/"+title.toLowerCase(),
+					"action_text": "book rightaway"
 				}
 				]
 		}else if(json["places"].length >0){
@@ -51,19 +54,22 @@ angular.module('continuum',
 					"site": "weather",
 					"title": "22°C "+title.toUpperCase(),
 					"info": " Right time to Headout ",
-					"link": "https://weather.com/weather/today"
+					"link": "https://weather.com/weather/today",
+					"action_text": "see forecast"
 				},
 				{
 					"site": "headout",
 					"title": "Attractions in "+title.toUpperCase(),
 					"info": "49 amazing things to do",
-					"link": "https://www.headout.com/tours/dubai"+title.toLowerCase()+"?tags=attraction&categoryId=107"
+					"link": "https://www.headout.com/tours/dubai"+title.toLowerCase()+"?tags=attraction&categoryId=107",
+					"action_text": "headout now"
 				},
 				{
 					"site": "facebook",
 					"title": "Your friends are ... ",
 					"info": "84 live events in this place",
-					"link": "https://www.facebook.com/search/events/?q="+title.toLowerCase()
+					"link": "https://www.facebook.com/search/events/?q="+title.toLowerCase(),
+					"action_text": "see more"
 				}
 				]
 		}else if(json["food"].length >0){
@@ -74,19 +80,22 @@ angular.module('continuum',
 					"site": "zomato",
 					"title": "Let's eat "+title.toUpperCase(),
 					"info": "26 amazing restaurants are available",
-					"link": "https://www.zomato.com/bangalore/restaurants?q="+title.toLowerCase()
+					"link": "https://www.zomato.com/bangalore/restaurants?q="+title.toLowerCase(),
+					"action_text": "book uber"
 				},
 				{
 					"site": "spoonacular",
 					"title": "Cook "+title.toUpperCase(),
 					"info": "amazing recipes, ready in 35 minutes!!!",
-					"link": "https://spoonacular.com/"+title.toLowerCase()
+					"link": "https://spoonacular.com/"+title.toLowerCase(),
+					"action_text": "lets make"
 				},
 				{
 					"site": "swiggy",
 					"title": "Deliver "+title.toUpperCase(),
 					"info": "get it delivered within 20 minutes!!!",
-					"link": "https://www.swiggy.com"
+					"link": "https://www.swiggy.com",
+					"action_text": "order now"
 				}
 				]
 		}else{

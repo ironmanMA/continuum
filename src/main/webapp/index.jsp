@@ -27,7 +27,7 @@
 			<div style="margin-left:100px" >
 				<p class="card-title">22°C in Koramangla</p>
 				<p class="card-info">Headout and enjoy the pleasnt weather</p>
-				<p class="url"><a href="https://weather.com/weather/today">learn more</a></p>
+				<p class="url"><a target="_blank" href="https://weather.com/weather/today">learn more</a></p>
 			</div>
 			</div>
 		</li>
@@ -40,7 +40,7 @@
 			<div style="margin-left:100px" >
 				<p class="card-title">Head to PVR</p>
 				<p class="card-info">Hurry up tickets are running out</p>
-				<p class="url"><a href="http://www.pvrcinemas.com/">book now</a></p>
+				<p class="url"><a target="_blank" href="http://www.pvrcinemas.com/">book now</a></p>
 			</div>
 			</div>
 		</li>
@@ -53,7 +53,7 @@
 			<div style="margin-left:100px" >
 				<p class="card-title">{{card.title}}</p>
 				<p class="card-info">{{card.info}}</p>
-				<p class="url"><a href="{{card.link}}">learn more</a></p>
+				<p class="url"><a target="_blank" href="{{card.link}}">{{card.action_text}}</a></p>
 			</div>
 			</div>
 		</li>
