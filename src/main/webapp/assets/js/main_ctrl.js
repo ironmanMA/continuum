@@ -61,7 +61,7 @@ angular.module('continuum',
 					"site": "headout",
 					"title": "Attractions in "+title.toUpperCase(),
 					"info": "49 amazing things to do",
-					"link": "https://www.headout.com/tours/dubai"+title.toLowerCase()+"?tags=attraction&categoryId=107",
+					"link": "https://www.headout.com/tours/dubai?tags=attraction&categoryId=107",
 					"action_text": "headout now"
 				},
 				{
