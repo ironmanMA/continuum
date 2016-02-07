@@ -4,6 +4,9 @@ import com.continuum.base.TermInput;
 import com.continuum.base.TermResponse;
 import com.continuum.utils.TextHelper;
 import com.google.gson.Gson;
+import org.elasticsearch.client.Client;
+import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,17 +48,20 @@ public class Controller {
         LinkedList<String> food = new LinkedList<String>();
         LinkedList<String> tokens = new LinkedList<String>();
 
+        Client client = new TransportClient().addTransportAddress(new InetSocketTransportAddress("continuum.rboomerang.com", 9300));
 
         tokens = TextHelper.Tokenizer(garbage.getText());
 
-        movies = TextHelper.getMovies(tokens);
-        places = TextHelper.getPlaces(tokens);
-        food = TextHelper.getFood(tokens);
+        movies = TextHelper.getMovies(tokens,client);
+        places = TextHelper.getPlaces(tokens,client);
+        food = TextHelper.getFood(tokens,client);
 
+        client.close();
 
         TermResponse tr = new TermResponse(garbage.getUserName(),garbage.getGeoLocation(),movies,places,food);
 
         String toReturn = gson.toJson(tr);
+        System.out.println("CORE OUTPUT:  " + toReturn);
         return toReturn;
     }
 
