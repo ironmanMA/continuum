@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+       <context:property-placeholder location="classpath:service.properties" />
+       <!--<bean id="httpNeo4jTranstivePostRequest"-->
+        <!--class="com.rboomerang.neo.infrastructure.helper.client.HTTPRequestImpl">-->
+              <!--<property name="postUrl" value="${neo4j.base.url.cypher}" />-->
+              <!--<property name="authorization" value="${neo4j.base.auth}" />-->
+              <!--<property name="contentType" value="${neo4j.base.url.cypher.content}" />-->
+       <!--</bean>-->
+    <!--<bean id="neo4jTranstiveRequest"-->
+          <!--class="com.rboomerang.neo.domain.model.entity.N4jTransitiveRequest">-->
+        <!--<property name="query" value="${neo4j.base.url.cypher.query.transitive}" />-->
+    <!--</bean>-->
+    <!--<bean id="searchImpl" class="com.rboomerang.neo.application.transtivequery.SearchImpl" />-->
+    <!--<bean id="n4jRequestConverter" class="com.rboomerang.neo.infrastructure.persistence.neo4j.helper.N4jRequestConverter" />-->
+    <!--<bean id="neo4jScanner" class="com.rboomerang.neo.infrastructure.persistence.neo4j.Neo4jScannerImpl" />-->
+    <!--<bean id="n4jResponseConverter" class="com.rboomerang.neo.api.N4jResponseConverter" />-->
+    <!--<bean id="retailerUrlFormatter" class="com.rboomerang.neo.domain.service.RetailerUrlFormatter" />-->
+
+</beans>
